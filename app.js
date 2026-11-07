@@ -47,7 +47,10 @@ fetch("DATA BARANG.csv")
                 harga2: angka(kolom[13]),
 
                 jml3: angka(kolom[14]),
-                harga3: angka(kolom[15])
+                harga3: angka(kolom[15]),
+                
+                jml4: angka(kolom[16]),
+                harga4: angka(kolom[17])
 
             });
 
@@ -139,17 +142,23 @@ function hitungTotal(){
     // 40-10000 = harga3
 
     if(
-        qty > barangDipilih.jml2 &&
-        barangDipilih.harga3 > 0
-    ){
-        hargaAktif = barangDipilih.harga3;
-    }
-    else if(
-        qty > barangDipilih.jml1 &&
-        barangDipilih.harga2 > 0
-    ){
-        hargaAktif = barangDipilih.harga2;
-    }
+    qty > barangDipilih.jml4 &&
+    barangDipilih.harga4 > 0
+){
+    hargaAktif = barangDipilih.harga4;
+}
+else if(
+    qty > barangDipilih.jml2 &&
+    barangDipilih.harga3 > 0
+){
+    hargaAktif = barangDipilih.harga3;
+}
+else if(
+    qty > barangDipilih.jml1 &&
+    barangDipilih.harga2 > 0
+){
+    hargaAktif = barangDipilih.harga2;
+}
 
     document.getElementById("harga").innerHTML =
         "Harga Satuan : Rp " +
@@ -224,6 +233,9 @@ if(existing){
 
     jml3: barangDipilih.jml3,
     harga3: barangDipilih.harga3,
+
+    jml4: barangDipilih.jml4,
+    harga4: barangDipilih.harga4,
 
     harga: harga,
     subtotal: subtotal
@@ -453,7 +465,13 @@ function hitungHargaKeranjang(item){
 
     let hargaAktif = item.harga1;
 
-    if(
+   if(
+    item.qty > item.jml4 &&
+    item.harga4 > 0
+){
+    hargaAktif = item.harga4;
+}
+    else if(
         item.qty > item.jml2 &&
         item.harga3 > 0
     ){
