@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TTS Harga</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>DAFTAR HARGA TIGA SEKAWAN</h1>
+
+<div id="updateInfo">
+    Terakhir Update : -
+</div>
+
+    <input
+        type="text"
+        id="cari"
+        placeholder="Cari barang..."
+    >
+
+    <div id="hasil"></div>
+
+    <div class="card">
+
+        <h3 id="namaBarang">Pilih barang dulu</h3>
+        <div id="satuanBarang">
+            Satuan : -
+        </div>
+        
+
+        <input
+            type="number"
+            id="qty"
+            placeholder="Qty"
+        >
+
+        <div
+            class="harga"
+            id="harga">
+            Harga Satuan : Rp 0
+        </div>
+
+        <div
+            class="subtotal"
+            id="subtotal">
+            Jumlah : Rp 0
+        </div>
+
+        <button onclick="tambahKeranjang()">
+            Tambah Keranjang
+        </button>
+
+    </div>
+
+    <div class="card">
+
+        <h3>Keranjang</h3>
+
+        <div id="keranjang">
+            Belum ada barang
+        </div>
+        <br>
+
+
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
